@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Restaurant">
+    <resultMap id="resultRestaurant" type="test.bean.Restaurant">
+        <result property="num" column="NUM" jdbcType="VARCHAR"/>
+        <result property="address" column="ADDRESS" jdbcType="VARCHAR"/>
+        <result property="name" column="NAME" jdbcType="VARCHAR"/>
+        <result property="category" column="CATEGORY" jdbcType="VARCHAR"/>
+        <result property="addX" column="ADDX" jdbcType="VARCHAR"/>
+        <result property="addY" column="ADDY" jdbcType="VARCHAR"/>
+    </resultMap>
+
+	<select id="selectRestaurant" resultType="Restaurant">
+        SELECT 
+				*	
+        FROM
+        	RESTAURANT R
+       	
+	</select>
+	
+	<insert id="insertRestaurant" parameterType="Restaurant">
+        INSERT INTO RESTAURANT 
+        VALUES (seq_REST.nextval, #{category,jdbcType = VARCHAR}, #{addY, jdbcType = VARCHAR},#{id, jdbcType = VARCHAR},  #{address,jdbcType = VARCHAR}, #{addX,jdbcType = VARCHAR}, #{name,jdbcType = VARCHAR})
+    </insert>
+
+</mapper>
