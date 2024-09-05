@@ -15,7 +15,7 @@ public class test {
         RestaurantDao restaurantDao = new RestaurantDao();
         
         try {
-        	String filePath = "D:/embeded/restaurant/restaurant1.json";
+        	String filePath = "D:/embeded/restaurant/restaurant15.json";
         	
             String jsonString = FileUtil.readFileAsString(filePath);
 //            System.out.println(jsonString);
@@ -29,12 +29,12 @@ public class test {
             if (restaurantArrayLeng > 0) {
             	for (Restaurant restaurant : restaurantArray) {
             		restaurantDao.insertRestaurant(restaurant);
-            		System.out.println("저장 완료");
             	}
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.println("저장 완료");
     }
 }

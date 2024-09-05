@@ -19,8 +19,118 @@
 	</select>
 	
 	<insert id="insertRestaurant" parameterType="Restaurant">
-        INSERT INTO RESTAURANT 
-        VALUES (seq_REST.nextval, #{category,jdbcType = VARCHAR}, #{addY, jdbcType = VARCHAR},#{id, jdbcType = VARCHAR},  #{address,jdbcType = VARCHAR}, #{addX,jdbcType = VARCHAR}, #{name,jdbcType = VARCHAR})
+	
+	 insert into RESTAURANT
+    (
+        RESTID, 
+        REGION_001, 
+		RESTAURANT_001, 
+        RESTNAME, 
+        RESTADDRESS, 
+		RESTX,
+		RESTY
+    ) 
+    values(
+        seq_REST.nextVal, 
+        <choose>
+            <when test="RESTADDRESS.contains('서울')">
+                '1'
+            </when>
+            <when test="RESTADDRESS.contains('인천')">
+                '2'
+            </when>
+            <when test="RESTADDRESS.contains('대전')">
+                '3'
+            </when>
+            <when test="RESTADDRESS.contains('대구')">
+                '4'
+            </when>
+            <when test="RESTADDRESS.contains('광주')">
+                '5'
+            </when>
+            <when test="RESTADDRESS.contains('부산')">
+                '6'
+            </when>
+            <when test="RESTADDRESS.contains('울산')">
+                '7'
+            </when>
+            <when test="RESTADDRESS.contains('세종특별자치시')">
+                '8'
+            </when>
+            <when test="RESTADDRESS.contains('경기')">
+                '31'
+            </when>
+            <when test="RESTADDRESS.contains('강원')">
+                '32'
+            </when>
+            <when test="RESTADDRESS.contains('충청북도')">
+                '33'
+            </when>
+            <when test="RESTADDRESS.contains('충청남도')">
+                '34'
+            </when>
+            <when test="RESTADDRESS.contains('경상북도')">
+                '35'
+            </when>
+            <when test="RESTADDRESS.contains('경상남도')">
+                '36'
+            </when>
+            <when test="RESTADDRESS.contains('전라북도')">
+                '37'
+            </when>
+            <when test="RESTADDRESS.contains('전라남도')">
+                '38'
+            </when>
+            <when test="RESTADDRESS.contains('제주도')">
+                '39'
+            </when>
+            <when test="RESTADDRESS.contains('전구')">
+                '40'
+            </when>
+            <otherwise>
+                ''
+            </otherwise>
+        </choose>, 
+        <choose>
+			<when test="RESTAURANT_001 != null and RESTAURANT_001.contains('한식')">
+                'K'
+            </when>
+            <when test="RESTAURANT_001 != null and RESTAURANT_001.contains('일식')">
+                'J'
+            </when>
+            <when test="RESTAURANT_001 != null and RESTAURANT_001.contains('중국식')">
+                'C'
+            </when>
+            <when test="RESTAURANT_001 != null and RESTAURANT_001.contains('양식')">
+                'W'
+            </when>
+            <otherwise>
+                ''
+            </otherwise>
+        </choose>, 
+        #{RESTNAME,jdbcType = VARCHAR},
+        #{RESTADDRESS,jdbcType = VARCHAR},
+        #{RESTX,jdbcType = VARCHAR}, 
+        #{RESTY, jdbcType = VARCHAR}
+    )
     </insert>
+    
+    
+  
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 </mapper>
