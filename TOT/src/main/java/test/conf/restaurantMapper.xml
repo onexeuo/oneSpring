@@ -54,7 +54,7 @@
             <when test="RESTADDRESS.contains('울산')">
                 '7'
             </when>
-            <when test="RESTADDRESS.contains('세종특별자치시')">
+            <when test="RESTADDRESS.contains('세종')">
                 '8'
             </when>
             <when test="RESTADDRESS.contains('경기')">
@@ -63,25 +63,25 @@
             <when test="RESTADDRESS.contains('강원')">
                 '32'
             </when>
-            <when test="RESTADDRESS.contains('충청북도')">
+            <when test="RESTADDRESS.contains('충북')">
                 '33'
             </when>
-            <when test="RESTADDRESS.contains('충청남도')">
+            <when test="RESTADDRESS.contains('충남')">
                 '34'
             </when>
-            <when test="RESTADDRESS.contains('경상북도')">
+            <when test="RESTADDRESS.contains('경북')">
                 '35'
             </when>
-            <when test="RESTADDRESS.contains('경상남도')">
+            <when test="RESTADDRESS.contains('경남')">
                 '36'
             </when>
-            <when test="RESTADDRESS.contains('전라북도')">
+            <when test="RESTADDRESS.contains('전북')">
                 '37'
             </when>
-            <when test="RESTADDRESS.contains('전라남도')">
+            <when test="RESTADDRESS.contains('전남')">
                 '38'
             </when>
-            <when test="RESTADDRESS.contains('제주도')">
+            <when test="RESTADDRESS.contains('제주')">
                 '39'
             </when>
             <when test="RESTADDRESS.contains('전구')">

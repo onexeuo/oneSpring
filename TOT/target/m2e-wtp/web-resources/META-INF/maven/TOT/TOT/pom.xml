@@ -83,13 +83,22 @@
 	    <artifactId>mybatis</artifactId>
 	    <version>3.5.16</version>
 	</dependency>
+	
+	<!-- mybatis-spring -->
+	<dependency>
+    	<groupId>org.mybatis</groupId>
+    	<artifactId>mybatis-spring</artifactId>
+    	<version>1.2.4</version>
+	</dependency>
 
-	<!-- mysql -->	
+	<!-- mysql 
 	<dependency>
 	    <groupId>mysql</groupId>
 	    <artifactId>mysql-connector-java</artifactId>
 	    <version>8.0.28</version>
-	</dependency>
+	</dependency>-->	
+	
+
   	
   </dependencies>
   

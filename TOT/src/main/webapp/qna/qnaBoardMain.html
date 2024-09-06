@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Trick or Trip</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/qnaBoardMain.css" />
+    <script>
+    	window.onload = function (){
+    	    $('.toWrite').click(function(){
+    			window.location.href="qnaBoardRegist.jsp";
+    		});
+    	    $('#qnaTableBody tr').click(function(){
+    	    	window.location.href="qnaBoardDetail.jsp"
+    	    })
+    		
+    	}
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+      <div class="container">
+          <div class="row1">
+            <h2 class="row1Text">Q & A</h2>
+          </div>        
+          <div class="row2">
+            <div class="qnaCategories">
+                <select class="qnaCategory">
+                    <option value="1" selected>계정관리</option>
+                    <option value="2">기술지원</option>
+                    <option value="3">불만요청</option>
+                    <option value="4">기타요청</option>
+                </select>
+                <select class="searchKeyword">
+                    <option value="" selected>제목</option>
+                    <option value="">내용</option>
+                </select>
+                <input type="text" name="searchValue" placeholder="Search" />
+                <input type="submit" value="검색" />
+                <input type="button" value="+ 글쓰기" class="toWrite"/>
+            </div>
+
+            <div class="questionList">
+                <div class="tableContainer">
+                    <table class="table">
+                        <thead id="qnaTableHead">
+                            <tr>
+                                <th>카테고리</th>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>작성일</th>
+                            </tr>
+                        </thead>
+                        <tbody id="qnaTableBody">
+                            <tr>
+                              <td>계정관리</td>
+                              <td>정지풀어주세요</td>
+                              <td>메롱</td>
+                              <td>2024.07.52</td>
+                            </tr>
+                            <tr>
+                              <td>계정관리</td>
+                              <td>정지풀어주세요</td>
+                              <td>메롱</td>
+                              <td>2024.07.52</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div> 
+
+          </div> 
+          <div class="paging">
+            <button class="prevBtn"><img src="../../image/arrow-left-circle.png" alt="prevbutton"/></button>
+            <button class="currentBtn">1</button>
+            <button class="nextBtn"><img src="../../image/arrow-right-circle.png" alt="prevbutton"/></button>
+          </div>          
+      </div>
+    </div>
+  </body>
+</html>

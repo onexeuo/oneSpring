@@ -1,10 +1,10 @@
-package test.interfaces;
+package test.service;
 
 import java.util.List;
 
-import test.bean.Restaurant;
+import test.domain.Restaurant;
 
-public interface restaurantInterface {
+public interface restaurantService {
 		
 		public abstract List<Restaurant> selectRestaurant() throws Exception;
 		

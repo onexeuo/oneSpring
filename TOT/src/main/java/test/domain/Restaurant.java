@@ -1,4 +1,4 @@
-package test.bean;
+package test.domain;
 
 public class Restaurant { 
 	private int RESTID;

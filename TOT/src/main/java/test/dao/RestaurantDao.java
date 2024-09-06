@@ -10,10 +10,10 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import com.google.gson.Gson;
 
-import test.bean.Restaurant;
-import test.interfaces.restaurantInterface;
+import test.domain.Restaurant;
+import test.service.restaurantService;
 
-public class RestaurantDao implements restaurantInterface {
+public class RestaurantDao implements restaurantService {
 	private static Reader reader = null;
 	private static SqlSessionFactory ssf = null;
 

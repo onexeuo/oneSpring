@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <title>Trick or Trip</title>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/qnaBoardRegist.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/qnaBoard.js"></script>
+</head>
+<body>    
+    <section class="container">   
+        <h2 class="row1Text">Q & A</h2> 
+        <div class="fromHeaderParent">
+            <div class="fromHeader">
+
+                <div class="row1">
+                    <div class="row1Text1">글 작성</div>
+                </div>
+
+                <div class="instruction">
+                    <div class="row1Text2">아래 양식을 확인하고 입력해주세요.</div>
+                </div>
+            </div>
+
+            <div class="row2">
+                <div class="qnaTitleHead"> 제목</div>
+                <div class="qnaCategories">
+                    <select class="qnaCategory" >
+                        <option value="1" selected>계정관리</option>
+                        <option value="2">기술지원</option>
+                        <option value="3">불만요청</option>
+                        <option value="4">기타요청</option>
+                    </select>
+                </div>
+                <div class="qnaTitle">
+                    <input class="qnaTitleText" placeholder="TOT에 문의합니다." type="text" name="qnatitle" required/>
+                </div>
+            </div>
+        </div>       
+
+        <div class="row3">
+            <div class="qnaContent">
+                <textarea class="qnaTextarea"></textarea>
+            </div>
+        </div>
+
+        <div class="privacyonsent">
+            <div class="row4">
+                <div class="row4Text1">개인정보 수집 및<br />이용 동의</div>
+            </div>
+            <div class="consentOptions">
+                <div class="row4Text2">개인정보 수집 및 이용에 동의하십니까?</div>
+                <label>
+                    <input type="radio" name="consent" value="agree"> 동의함
+                    <input type="radio" name="consent" value="disagree"> 동의안함
+                </label>
+            </div>
+        </div>
+
+        <div class="actionsArea">                            
+            <div class="toList">
+                <button class="toListButton">목록으로</button>
+            </div>
+            <div class="rowBottom">
+                <div class="rowBottomText">
+                    <div class="bottomText">건전한 게시글 문화를 응원합니다.</div>
+                </div>
+                <div class="subMissionButtons">
+                    <button type="submit" class="registButton" >+ 글 등록하기</button>
+                    <button type="button" class="cancelButton" > x 취소하기 </button>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
