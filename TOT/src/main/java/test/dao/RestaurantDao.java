@@ -19,7 +19,7 @@ public class RestaurantDao implements restaurantService {
 
 	static {
 		try {
-			reader = Resources.getResourceAsReader("test/conf/configuration.xml");
+			reader = Resources.getResourceAsReader("test/conf/beans.xml");
 			ssf = new SqlSessionFactoryBuilder().build(reader);
 
 		} catch (Exception ex) {

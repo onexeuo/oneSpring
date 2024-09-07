@@ -1,64 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
-       xsi:schemaLocation="
-           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
-           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
-           http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd">
-
-    <!-- Property placeholder configuration -->
-    <context:property-placeholder location="classpath:TOT/props/db.properties"/>
-
-    <!-- Component scanning -->
-    <context:component-scan base-package="TOT" />
-
-    <!-- DataSource configuration -->
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="${db.url}"/>
-        <property name="username" value="${db.username}"/>
-        <property name="password" value="${db.password}"/>
-    </bean>
-
-    <!-- MyBatis SqlSessionFactory configuration -->
-    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="TOT.domain"/>
-        <property name="mapperLocations">
-            <list>
-                <value>classpath:tot/conf/mapper.xml</value>
-            </list>
-        </property>
-    </bean>
-
-    <!-- MyBatis SqlSessionTemplate configuration -->
-    <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg ref="sqlSessionFactory"/>
-    </bean>
-
-    <!-- MapperFactoryBean configuration -->
-    <bean id="qnaMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
-        <property name="mapperInterface" value="TOT.conf.qnaMapper"/>
-        <property name="sqlSessionTemplate" ref="sqlSession"/>
-    </bean>
-
-    <!-- MapperScannerConfigurer for scanning mappers -->
-    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="TOT.conf"/>
-    </bean>
-
-    <!-- Additional beans -->
-    <bean id="qnaService" class="TOT.service.qnaService">
-        <constructor-arg ref="festivalInterface"/>
-        <constructor-arg ref="restTemplate"/>
-        <constructor-arg ref="gson"/>
-    </bean>
-
-    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"/>
-
-    <bean id="gson" class="com.google.gson.Gson"/>
-</beans>
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="test/props/db.properties" />
+	<typeAliases>
+		<typeAlias type="test.domain.Restaurant" alias="Restaurant" />
+	</typeAliases>	
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${db.driverClass}"/>
+				<property name="url" value="${db.url}"/>
+				<property name="username" value="${db.username}"/>
+				<property name="password" value="${db.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+    <mappers>
+        <mapper resource="test/conf/restaurantMapper.xml"/>
+    </mappers>
+</configuration>

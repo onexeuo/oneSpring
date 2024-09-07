@@ -4,7 +4,6 @@ import test.domain.Restaurant;
 import test.dao.RestaurantDao;
 import test.util.FileUtil;
 
-import java.util.List;
 
 import com.google.gson.Gson;
 //import com.mysql.cj.Session;
